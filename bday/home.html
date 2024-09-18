@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+</html>
+
+<body>
+  <h1 id="text"></h1>
+  <div id="videoContainer">
+    <button id="button" onclick="next();">>>></button>
+    <video id="slideshow" height="400" style="display: none;">
+      <source src="slideshow.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+</body>
+<script>
+  const textArray = ["hello sophie", "happy sixteenth birthday!", "i had so many ideas of what to get you", "but they were too expensive :(", "...", "if i had enough money...", "here's what i would've gotten:"]
+  let currentIndex = 0;
+
+  const button = document.getElementById("button");
+  const textContainer = document.getElementById("text");
+  const video = document.getElementById("slideshow");
+
+  // Display the initial text
+  textContainer.textContent = textArray[currentIndex];
+
+  button.addEventListener("click", () => {
+    // Move to the next text
+    currentIndex++;
+
+    // Check if we have more texts
+    if (currentIndex < textArray.length) {
+      textContainer.textContent = textArray[currentIndex];
+    } else {
+      // If all texts have been shown, play the video
+      video.style.display = 'block'; // Show the video
+      video.play();
+    }
+  });
+</script>
