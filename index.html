@@ -50,6 +50,10 @@
           // Set up a listener for when the video ends
           video.onended = () => {
             videoEnded = true; // Mark the video as ended
+            video.style.display = 'none'; // Hide the video after it ends
+            isFinalText = true; // Switch to the final text phase
+            currentIndex = 0; // Reset the index for the final texts
+            textContainer.textContent = finalTextArray[currentIndex]; // Show the first final text
           };
         }
       } else {
@@ -63,16 +67,8 @@
           button.style.display = 'none'; // Hide the button
         }
       }
-
-      // If the video has ended and the button is clicked
-      if (videoEnded) {
-        video.style.display = 'none'; // Hide the video
-        isFinalText = true; // Switch to the final text phase
-        currentIndex = 0; // Reset the index for the final texts
-        textContainer.textContent = finalTextArray[currentIndex]; // Show the first final text
-        videoEnded = false; // Reset the video ended flag
-      }
     });
   </script>
 </body>
+
 </html>
