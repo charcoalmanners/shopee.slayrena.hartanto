@@ -42,19 +42,22 @@ h1 {
 
 button {
   font-family: 'Space Mono';
-  font-size:4em;
-  text-align:center;
-  height:50px;
-  width:150px;
+  font-size: 4em;
+  text-align: center;
+  height: 50px;
+  width: 150px;
   color: #f2a480;
   position: fixed;
   top: 650px;
-  left:0;
-  right:0;
-  margin:auto;
+  left: 0;
+  right: 0;
+  margin: auto;
   background-color: transparent;
-  border-style:hidden;
+  border: none;
   box-shadow: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 video {
     top: 720px;
