@@ -19,7 +19,7 @@ h1 {
   width: 800px; 
   position: absolute;
   color: #7469B6;
-  top: 500px;
+  top: 450px;
   left: 0;
   right: 0;
   margin: auto;
@@ -31,7 +31,7 @@ h1 {
 }
 
 .gif {
-  top: 300px;
+  top: 250px;
   left: 0;
   right: 0;
   margin: auto;
@@ -42,7 +42,7 @@ h1 {
 
 button {
   font-family: 'Space Mono';
-  font-size: 4em;
+  font-size: 3em;
   text-align: center;
   height: 50px;
   width: 150px;
