@@ -21,7 +21,7 @@ h1 {
   display:block;
   position:absolute;
   color: #7469B6;
-  top:300px;
+  top:500px;
   left:0;
   right:0;
   margin:auto;
@@ -29,12 +29,12 @@ h1 {
 }
 
 .gif {
-  top: 100px;
+  top: 200px;
   left: 0;
   right: 0;
   margin: auto;
   position: absolute;
-  height: 20%;
+  height: 10%;
   display: block;
 }
 
@@ -46,7 +46,7 @@ button {
   width:150px;
   color: #f2a480;
   position: fixed;
-  top: 450px;
+  top: 650px;
   left:0;
   right:0;
   margin:auto;
@@ -55,7 +55,7 @@ button {
   box-shadow: none;
 }
 video {
-    top: 520px;
+    top: 720px;
   left:0;
   right:0;
   margin-left: auto;
