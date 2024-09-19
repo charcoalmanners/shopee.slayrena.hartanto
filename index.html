@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Domine:wght@600&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+</head>
+
+</html>
+
+<body>
+  <img src="gif.gif" class="gif"></a>
+  <h1 id="text"></h1>
+  <div id="videoContainer">
+    <button id="button" onclick="next();">
+      >>>
+    </button>
+    <video id="slideshow" height="500px" style="display: none;" muted webkit-playsinline playsinline>
+      <source src="slideshow.mp4" type="video/mp4">
+    </video>
+  </div>
+
+</body>
+<script>
+  const textArray = ["hello sophie", "happy sixteenth birthday!", "i had so many ideas of what to get you", "but they were too expensive :(", "...", "if i had enough money...", "here's what i would've gotten:"]
+  const finalTextArray = ["once again happy bday", "i really really really really...", "appreciate you for...", "putting up with all of my shenanigans,", "i also love how annoying you are,", "your terrible choices in men,", "and how you never give up on anything.", "...", "anyways, just know that i would...", "hide a body if you asked me to", "byee <33"]
+  let currentIndex = 0;
+  let isFinalText = false; // Flag to check if we are in the final text phase
+  let videoEnded = false; // Flag to check if the video has finished
+
+  const button = document.getElementById("button");
+  const textContainer = document.getElementById("text");
+  const video = document.getElementById("slideshow");
+
+  // Display the initial text
+  textContainer.textContent = textArray[currentIndex];
+
+  button.addEventListener("click", () => {
+    if (!isFinalText) {
+      // Move to the next text in the first array
+      currentIndex++;
+
+      if (currentIndex < textArray.length) {
+        textContainer.textContent = textArray[currentIndex];
+      } else {
+        // If all texts have been shown, play the video
+        video.style.display = 'block'; // Show the video
+        video.play();
+
+        // Set up a listener for when the video ends
+        video.onended = () => {
+          videoEnded = true; // Mark the video as ended
+        };
+      }
+    } else {
+      // If we're in the final text phase
+      currentIndex++;
+
+      if (currentIndex < finalTextArray.length) {
+        textContainer.textContent = finalTextArray[currentIndex];
+      } else {
+        // Hide the button when done with final texts
+        button.style.display = 'none'; // Hide the button
+      }
+    }
+
+    // If the video has ended and the button is clicked
+    if (videoEnded) {
+      video.style.display = 'none'; // Hide the video
+      isFinalText = true; // Switch to the final text phase
+      currentIndex = 0; // Reset the index for the final texts
+      textContainer.textContent = finalTextArray[currentIndex]; // Show the first final text
+      videoEnded = false; // Reset the video ended flag
+    }
+  });
+
+</script>
